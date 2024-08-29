@@ -46,8 +46,50 @@ h2 {
   margin-bottom: 2em;
 }
 
-#real-time, #trend-chart {
+#charts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.chart-container {
+  flex: 1;
+  min-width: 300px;
   margin-bottom: 2em;
+}
+
+canvas {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+canvas:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#alerts {
+  margin-top: 2em;
+}
+
+#alert-container {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 1em;
+  border: 1px solid #ffeeba;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.alert {
+  margin-bottom: 1em;
+}
+
+.alert.severe {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
 }
 
 footer {
