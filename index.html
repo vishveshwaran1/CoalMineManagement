@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emission Tracking Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Emission Tracking Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#trends">Trends</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <div id="summary">
+                <p>Total Emissions: <span id="total-emissions">0</span> kg CO2</p>
+                <p>Energy Consumption: <span id="energy-consumption">0</span> kWh</p>
+                <p>Temperature: <span id="temperature">0</span> °C</p>
+                <p>Humidity: <span id="humidity">0</span> %</p>
+                <p>Gas Ratio (CO2/O2): <span id="gas-ratio">0</span></p>
+            </div>
+            <div id="real-time">
+                <canvas id="real-time-chart"></canvas>
+            </div>
+        </section>
+
+        <section id="trends">
+            <h2>Emission Trends</h2>
+            <div id="trend-chart">
+                <canvas id="trend-chart-canvas"></canvas>
+            </div>
+        </section>
+
+        <section id="recommendations">
+            <h2>Recommendations</h2>
+            <div id="recommendations-list">
+                <!-- Recommendations will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Emission Tracking Dashboard</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
