@@ -8,6 +8,9 @@ body, h1, h2, p {
 body {
   background-color: #f4f4f4;
   color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
@@ -33,28 +36,27 @@ header nav ul li a {
 }
 
 main {
-  padding: 2em;
-}
-
-h2 {
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 0.5em;
-  margin-bottom: 1em;
-}
-
-#summary {
-  margin-bottom: 2em;
-}
-
-#charts {
   display: flex;
-  flex-wrap: wrap;
+  flex: 1;
+  padding: 2em;
   gap: 2em;
 }
 
-.chart-container {
+#overview, #trends, #recommendations, #alerts {
   flex: 1;
-  min-width: 300px;
+}
+
+#charts, #sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+#sidebar {
+  width: 300px;
+}
+
+.chart-container {
   margin-bottom: 2em;
 }
 

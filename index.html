@@ -21,29 +21,24 @@
     <main>
         <section id="overview">
             <h2>Overview</h2>
-            <div id="alerts" class="alert-box">
-                <!-- Alerts will be displayed here -->
-            </div>
-            <div id="summary" class="summary-box">
+            <div id="summary">
                 <p>Total Emissions: <span id="total-emissions">0</span> kg CO2</p>
                 <p>Energy Consumption: <span id="energy-consumption">0</span> kWh</p>
-                <p>Temperature: <span id="temperature">0</span> °C</p>
-                <p>Humidity: <span id="humidity">0</span> %</p>
                 <p>Gas Ratio (CO2/O2): <span id="gas-ratio">0</span></p>
             </div>
             <div id="charts">
                 <div class="chart-container">
-                    <h3>Real-time Data</h3>
-                    <canvas id="real-time-chart"></canvas>
+                    <h3>Energy Consumption (Live)</h3>
+                    <canvas id="energy-consumption-chart"></canvas>
                 </div>
-                <div class="chart-container">
-                    <h3>Emission Trends</h3>
-                    <canvas id="trend-chart-canvas"></canvas>
-                </div>
-                <div class="chart-container">
-                    <h3>Gas Ratios</h3>
-                    <canvas id="pie-chart"></canvas>
-                </div>
+            </div>
+        </section>
+
+        <section id="trends">
+            <h2>Trends</h2>
+            <div class="chart-container">
+                <h3>Emission Trends</h3>
+                <canvas id="trend-chart-canvas"></canvas>
             </div>
         </section>
 
@@ -51,6 +46,24 @@
             <h2>Recommendations</h2>
             <div id="recommendations-list">
                 <!-- Recommendations will be displayed here -->
+            </div>
+        </section>
+
+        <section id="sidebar">
+            <div class="chart-container">
+                <h3>Temperature</h3>
+                <canvas id="temperature-bar-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>Humidity</h3>
+                <canvas id="humidity-bar-chart"></canvas>
+            </div>
+        </section>
+
+        <section id="alerts">
+            <h2>Alerts</h2>
+            <div id="alert-container">
+                <!-- Alerts will be displayed here -->
             </div>
         </section>
     </main>
@@ -63,3 +76,4 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
+
