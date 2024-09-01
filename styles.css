@@ -1,105 +1,191 @@
-/* Reset some basic elements */
-body, h1, h2, p {
+/* Basic Reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 body {
+  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem 1rem;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 1rem;
+  font-size: 16px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 1rem;
+  margin-top: 10px;
+}
+
+.data-summary {
+  grid-column: 1 / span 4;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-summary h2 {
+  margin-bottom: 0.5rem;
+}
+
+.data-summary p {
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+
+.chart-container, .alerts, .recommendations {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 425px;
+}
+
+.chart-container h3 {
+  margin-bottom: 0.5rem;
+  font-size: 16px;
+}
+
+.chart-container canvas {
+  width: 100%;
+  height: 250px; /* Fixed height for charts */
+}
+
+.thermometer-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-header {
-  background-color: #007bff;
-  color: white;
-  padding: 1em;
-  text-align: center;
+.thermometer {
+  width: 50px;
+  height: 200px;
+  background: #e0e0e0;
+  border-radius: 25px;
+  position: relative;
+  margin-bottom: 10px;
 }
 
-header nav ul {
+#temperature-mercury, #humidity-mercury {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: red;
+  border-radius: 25px;
+}
+
+.thermometer-values {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  font-size: 14px;
+}
+
+.alert {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.alert.severe {
+  background-color: #ff4d4d;
+}
+
+.alert.warning {
+  background-color: #ffcc00;
+}
+
+.recommendations ul {
   list-style: none;
   padding: 0;
 }
 
-header nav ul li {
-  display: inline;
-  margin: 0 1em;
+.recommendations li {
+  margin-bottom: 0.5rem;
 }
 
-header nav ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-main {
-  display: flex;
-  flex: 1;
-  padding: 2em;
-  gap: 2em;
-}
-
-#overview, #trends, #recommendations, #alerts {
-  flex: 1;
-}
-
-#charts, #sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-
-#sidebar {
-  width: 300px;
-}
-
-.chart-container {
-  margin-bottom: 2em;
-}
-
-canvas {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-canvas:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-#alerts {
-  margin-top: 2em;
-}
-
-#alert-container {
-  background-color: #fff3cd;
-  color: #856404;
-  padding: 1em;
-  border: 1px solid #ffeeba;
-  border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.alert {
-  margin-bottom: 1em;
-}
-
-.alert.severe {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-}
-
-footer {
-  background-color: #007bff;
-  color: white;
+.footer {
+  background-color: #333;
+  color: #fff;
   text-align: center;
-  padding: 1em;
+  padding: 0.5rem 1rem;
   position: fixed;
-  bottom: 0;
   width: 100%;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .navbar a {
+      padding: 0.5rem 0;
+  }
+
+  .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(12, auto);
+  }
+
+  .data-summary {
+      grid-column: 1 / span 1;
+  }
+}
+.ai-monitoring {
+  grid-column: span 4;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+.camera-feed, .worker-safety {
+  margin-bottom: 1rem;
+}
+
+#camera-view, #safety-status {
+  background: #f4f4f4;
+  height: 300px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
