@@ -17,6 +17,7 @@ body {
   background-color: #333;
   color: #fff;
   padding: 0.5rem 1rem;
+  height: 60px;
 }
 
 .navbar a {
@@ -61,12 +62,19 @@ body {
   font-size: 14px;
 }
 
-.chart-container, .alerts, .recommendations {
+.chart-container {
   background: #fff;
   padding: 1rem;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 600px;
+}
+.alerts, .recommendations{
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 300px;
 }
 span{
   display:flex;
@@ -101,7 +109,7 @@ span{
   font-weight: 800;
   /* justify-content: space-between; */
   /* font-family: ; */
-  margin: 65px 10px 10px 10px;
+  margin: 30px 10px 10px 10px;
 }
 
 .thermometer {
@@ -116,13 +124,22 @@ span{
   
 }
 
-#temperature-mercury, #humidity-mercury {
+#temperature-mercury {
   position: absolute;
   bottom: 0;
   width: 100%;
   background: red;
   border-radius: 25px;
   opacity: 0.8;
+}
+#humidity-mercury{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: red;
+  border-radius: 25px;
+  opacity: 0.8;
+  
 }
 
 .thermometer-values {
@@ -207,3 +224,44 @@ span{
   align-items: center;
   justify-content: center;
 }
+.recommendations ul li{
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-weight: bold;
+    margin: 25px;
+   color: orange; 
+   text-shadow: black;
+}
+.alerts ul li{
+  display: flex;
+    align-items: center;
+    text-align: left;
+    font-weight: bold;
+    margin: 25px;
+   color:red; 
+   text-shadow: black;
+}
+/* canvas {
+  max-width:100%;
+}
+
+.container-t {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  height: 250px;
+  width: 500px;
+ 
+} */
+ .temp{
+  text-align: center;
+  background:white ;
+  padding: 20px;
+  border-radius:10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  height: 350px;
+  width: 500px;
+ }

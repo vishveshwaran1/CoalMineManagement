@@ -1,0 +1,19 @@
+// Define the analog pin where the MQ sensor is connected
+#define MQ_PIN A0
+
+void setup() {
+  // Start the serial communication
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Read the analog value from the MQ sensor
+  int sensorValue = analogRead(MQ_PIN);
+
+  // Print the sensor value to the serial monitor
+  Serial.print("MQ Sensor Value: ");
+  Serial.println(sensorValue);
+
+  // Wait a bit before taking another reading
+  delay(1000);
+}

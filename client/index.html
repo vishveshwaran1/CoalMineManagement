@@ -34,6 +34,7 @@
             <div class="chart-container" style="grid-column: span 2;">
                 <h3>Energy Consumption</h3>
                 <canvas id="consumptionChart"></canvas>
+                
             </div>
 
             <!-- Emission Levels Chart -->
@@ -54,8 +55,11 @@
                 <div class="thermometer">
                     <span>40°C</span>
                     <span>30°C</span>
+                    <span>25°C</span>
                     <span>20°C</span>
+                    <span>15°C</span>
                     <span>10°C</span>
+                    <span>5°C</span>
                     <span>0°C</span> 
                     <div id="temperature-mercury"></div>
                 </div>
@@ -77,9 +81,14 @@
                     </div>
                 </div>
             </div>
+
+            <div class="temp" >
+                <h1>Temperature and Humidity Checker</h1>
+                <canvas id="tempHumidityChart"></canvas>
+            </div>
            
 <div class="ai-monitoring">
-    <h3>AI-Based Safety Monitoring</h3>
+    <h3>Safety Monitoring</h3>
     <div class="camera-feed">
         <h4>Camera Feed</h4>
         <div id="camera-view">
@@ -98,14 +107,24 @@
             <!-- Alerts Section -->
             <div class="alerts" style="grid-column: span 4;">
                 <h3>Alerts</h3>
-                <!-- Alerts will be dynamically inserted here -->
+                <ul>
+                    
+                    <li>Critical Alert: Temperature spike detected at 50°C near coal seam. Potential risk of methane gas ignition. Immediate evacuation recommended."
+                    </li>
+                    <li>"Warning: Humidity levels in Tunnel 4 have reached 90% and in working zone B has risen to 35°C with 85% humidity. Heat stress risk for workers."
+                    </li>
+                </ul>
             </div>
 
             <!-- Recommendations Section -->
             <div class="recommendations" style="grid-column: span 4;">
                 <h3>Recommendations</h3>
                 <ul>
-                    <!-- Recommendations will be dynamically inserted here -->
+                    <li>Ensure that temperature and humidity sensors are regularly calibrated and maintained to provide accurate readings to prevent false alarms or missed detections.
+                    </li>
+                    <li>Improve ventilation systems to rapidly disperse dangerous gases when detected. Ensure that these systems can be activated automatically or remotely in response to gas sensor alerts.
+                    </li>
+                    
                 </ul>
             </div>
         </div>
