@@ -1,5 +1,6 @@
-const express = require('express');
-const mongoose = require('mongoose');
+import express from "express"
+import mongoose from "mongoose"
+import cors from "cors"
 const bcrypt = require('bcryptjs');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
@@ -74,7 +75,24 @@ app.get('/profile', (req, res) => {
   }
   res.json({ message: 'Profile data' });
 });
+let iotData = {
+  temperature: 0,
+  humidity: 0
+};
 
+// Endpoint to receive data from IoT device
+app.post('/api/data', (req, res) => {
+  const { temperature, humidity } = req.body;
+  iotData.temperature = temperature;
+  iotData.humidity = humidity;
+  console.log(`Received data: Temperature = ${temperature}, Humidity = ${humidity}`);
+  res.sendStatus(200);
+});
+
+// Endpoint to fetch data for the frontend
+app.get('/api/data', (req, res) => {
+  res.json(iotData);
+});
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

@@ -106,7 +106,19 @@ function updateSafetyStatus() {
     safetyStatus.innerHTML = `<p>Analyzing worker safety...</p>`;
     // Integrate AI safety analysis
 }
+async function fetchData() {
+    try {
+        const response = await fetch('http://localhost:3000/api/data');
+        const data = await response.json();
+        document.getElementById('temperature').textContent = `${data.temperature} °C`;
+        document.getElementById('humidity').textContent = `${data.humidity} %`;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
 
+// Fetch data every 5 seconds
+setInterval(fetchData, 5000);
 // Initialize all components
 function init() {
     initCharts();
@@ -115,6 +127,7 @@ function init() {
     generateRecommendations();
     updateCameraFeed();
     updateSafetyStatus();
+    fetchData();
 }
 
 document.addEventListener('DOMContentLoaded', init);
